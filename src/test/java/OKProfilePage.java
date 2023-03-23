@@ -4,9 +4,9 @@ import com.codeborne.selenide.Condition;
 import static com.codeborne.selenide.Selenide.$;
 
 public class OKProfilePage {
-    private static final By PROFILE_NAME_LOCATOR = new By.ById(".tico.ellip");
+    private static final By PROFILE_NAME_LOCATOR = new By.ByClassName("online-fr_no-online");
 
-    public void checkIfNotProfile() {
-        $(PROFILE_NAME_LOCATOR).shouldNot(Condition.exist);
+    public String returnNoFriendsOnline() {
+        return $(PROFILE_NAME_LOCATOR).text();
     }
 }
